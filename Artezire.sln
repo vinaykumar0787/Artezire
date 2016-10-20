@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3F0EBD6E-9CD1-41FE-91B1-83DC74A6E748}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD125437-52F7-4B48-843A-497A0C9245F6}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Artezire.Web.Api", "src\Artezire\Artezire.Web.Api.xproj", "{7BC6D135-EF81-48A2-ACD6-8F6F1AE08E95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{F5928336-262E-43AF-BD2D-47E146F5A54E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{16BFFB3C-7EF4-401B-9983-532813B099CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Artezire.Common.Infrastructure", "src\Common\Artezire.Common.Infrastructure\Artezire.Common.Infrastructure.csproj", "{596B069B-5ECA-42AE-8530-C7AC7D0BBA90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B298DB01-8141-4629-9926-5C9F385F9CF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Artezire.Data.Entities", "src\Data\Artezire.Data.Entities\Artezire.Data.Entities.csproj", "{EC6B8072-5AA7-4414-AF5F-83FED4D9CB17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Artezire.Data.Access", "src\Data\Artezire.Data.Access\Artezire.Data.Access.csproj", "{F8E67B33-701E-4D93-91E6-2FA05D81FDD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BC6D135-EF81-48A2-ACD6-8F6F1AE08E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC6D135-EF81-48A2-ACD6-8F6F1AE08E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC6D135-EF81-48A2-ACD6-8F6F1AE08E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC6D135-EF81-48A2-ACD6-8F6F1AE08E95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596B069B-5ECA-42AE-8530-C7AC7D0BBA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596B069B-5ECA-42AE-8530-C7AC7D0BBA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596B069B-5ECA-42AE-8530-C7AC7D0BBA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596B069B-5ECA-42AE-8530-C7AC7D0BBA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6B8072-5AA7-4414-AF5F-83FED4D9CB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6B8072-5AA7-4414-AF5F-83FED4D9CB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6B8072-5AA7-4414-AF5F-83FED4D9CB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6B8072-5AA7-4414-AF5F-83FED4D9CB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E67B33-701E-4D93-91E6-2FA05D81FDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E67B33-701E-4D93-91E6-2FA05D81FDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E67B33-701E-4D93-91E6-2FA05D81FDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E67B33-701E-4D93-91E6-2FA05D81FDD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7BC6D135-EF81-48A2-ACD6-8F6F1AE08E95} = {F5928336-262E-43AF-BD2D-47E146F5A54E}
+		{F5928336-262E-43AF-BD2D-47E146F5A54E} = {3F0EBD6E-9CD1-41FE-91B1-83DC74A6E748}
+		{16BFFB3C-7EF4-401B-9983-532813B099CB} = {3F0EBD6E-9CD1-41FE-91B1-83DC74A6E748}
+		{596B069B-5ECA-42AE-8530-C7AC7D0BBA90} = {16BFFB3C-7EF4-401B-9983-532813B099CB}
+		{B298DB01-8141-4629-9926-5C9F385F9CF9} = {3F0EBD6E-9CD1-41FE-91B1-83DC74A6E748}
+		{EC6B8072-5AA7-4414-AF5F-83FED4D9CB17} = {B298DB01-8141-4629-9926-5C9F385F9CF9}
+		{F8E67B33-701E-4D93-91E6-2FA05D81FDD8} = {B298DB01-8141-4629-9926-5C9F385F9CF9}
+	EndGlobalSection
+EndGlobal
