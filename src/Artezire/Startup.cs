@@ -38,6 +38,9 @@ namespace Artezire
             //Handle IOC
             IOCHandle.RegisterIOC(services);
 
+            //Enable CORS
+            services.AddCors();
+
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
