@@ -1,24 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//using Host.Configuration;
+using Artezire.Web.OAuth.Configuration;
+using Artezire.Web.OAuth.Interfaces;
+using IdentityServer4;
+using IdentityServer4.Services;
+using IdentityServer4.Validation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.StaticFiles;
-using IdentityServer3.Core.Configuration;
+using System;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Artezire.Web.OAuth
 {
     public class Startup
     {
+        private readonly IHostingEnvironment _environment;
+
+        public Startup(IHostingEnvironment env)
+        {
+            _environment = env;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var cert = new X509Certificate2(Path.Combine(_environment.ContentRootPath, "idsvr3test.pfx"), "idsrv3test");
+
+            services.AddMvc();
+
+            services.AddTransient<IUserManager, UserManager>();
+            services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
+            services.AddTransient<IProfileService, ProfileService>();
+
+            var builder = services.AddIdentityServer()
+                .SetSigningCredential(cert)
+                .AddInMemoryStores()
+                .AddInMemoryClients(Clients.Get())
+                .AddInMemoryScopes(Scopes.Get())
+                .SetTemporarySigningCredential(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,22 +55,10 @@ namespace Artezire.Web.OAuth
 
             app.UseStaticFiles();
 
-            var certFile = env.WebRootPath + "\\idsrv3test.pfx";
+            app.UseIdentityServer();
 
-            var idsrvOptions = new IdentityServerOptions
-            {
-                Factory = new IdentityServerServiceFactory(),
-
-                SigningCertificate = new X509Certificate2(certFile, "idsrv3test"),
-                RequireSsl = false
-            };
-
-            app.UseIdentityServer(idsrvOptions);
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
