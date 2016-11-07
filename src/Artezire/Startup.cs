@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using IdentityServer4.Services;
+using IdentityServer4.Validation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Artezire.Common.Infrastructure;
+
+using System.Security.Cryptography.X509Certificates;
+using System.IO;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System;
+using IdentityServer4.AccessTokenValidation;
 
 namespace Artezire
 {
@@ -59,6 +67,21 @@ namespace Artezire
             app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
+
+            app.UseCors(policy=>
+            {
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+                policy.AllowAnyOrigin();
+            });
+
+            //app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            //{
+            //    Authority = "http://localhost:57046",
+            //    RequireHttpsMetadata  =false,
+            //    EnableCaching = false,
+            //    ScopeName = "api1"
+            //});
 
             app.UseMvc();
         }

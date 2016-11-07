@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Artezire.Data.Access;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Artezire.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class ProductController : Controller
     {
         public IProductRepository _productRepo { get; set; }

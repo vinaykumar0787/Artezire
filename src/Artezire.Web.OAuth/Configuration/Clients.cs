@@ -15,15 +15,18 @@ namespace Artezire.Web.OAuth.Configuration
                     ClientName = "MVC Hybrid Client",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
-                    RedirectUris = new List<string>
-                    {
-                        "http://localhost:3308/signin-oidc"
-                    },
+                    AccessTokenType = AccessTokenType.Jwt,
+                    AccessTokenLifetime = 3600,
 
-                    PostLogoutRedirectUris = new List<string>
-                    {
-                        "http://localhost:3308/"
-                    },
+                    //RedirectUris = new List<string>
+                    //{
+                    //    "http://localhost:3308/signin-oidc"
+                    //},
+
+                    //PostLogoutRedirectUris = new List<string>
+                    //{
+                    //    "http://localhost:3308/"
+                    //},
 
                     ClientSecrets = new List<Secret>
                     {
