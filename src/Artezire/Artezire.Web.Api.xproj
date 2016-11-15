@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\Artezire.Common.Infrastructure\Artezire.Common.Infrastructure.csproj" />
     <ProjectReference Include="..\Data\Artezire.Data.Access\Artezire.Data.Access.csproj" />
+    <ProjectReference Include="..\Data\Artezire.Data.Core\Artezire.Data.Core.csproj" />
     <ProjectReference Include="..\Data\Artezire.Data.Entities\Artezire.Data.Entities.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" Condition="'$(VSToolsPath)' != ''" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Artezire.Data.Entities
 {
-    class UserStatus : BaseEntity
+    public class UserStatus : BaseEntity
     {
         public UserStatusEnum UserStatusCode { get; set; }
         public string UserStatusDescription { get; set; }

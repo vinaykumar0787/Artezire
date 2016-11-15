@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Artezire.Data.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Artezire.Data.Access
+namespace Artezire.Data.Core
 {
     public interface IProductRepository
     {
+        Task<List<Product>> GetAllProducts();
     }
 }

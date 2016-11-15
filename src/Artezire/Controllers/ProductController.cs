@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Artezire.Data.Access;
-using Microsoft.AspNetCore.Authorization;
+using Artezire.Data.Core;
+using Artezire.Data.Entities;
 
 namespace Artezire.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class ProductController : Controller
     {
         public IProductRepository _productRepo { get; set; }
@@ -21,9 +21,9 @@ namespace Artezire.Controllers
 
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<string>> Get()
+        public async Task<IEnumerable<Product>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return await _productRepo.GetAllProducts();
         }
 
         // GET api/values/5

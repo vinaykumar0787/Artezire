@@ -382,6 +382,10 @@
       <Project>{f8e67b33-701e-4d93-91e6-2fa05d81fdd8}</Project>
       <Name>Artezire.Data.Access</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Data\Artezire.Data.Core\Artezire.Data.Core.csproj">
+      <Project>{5a936f2f-251c-4538-a9a0-58d9e1d097d1}</Project>
+      <Name>Artezire.Data.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

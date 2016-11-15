@@ -1,4 +1,5 @@
 ﻿using Artezire.Data.Access;
+using Artezire.Data.Core;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Artezire.Common.Infrastructure

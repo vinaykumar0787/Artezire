@@ -17,6 +17,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System;
 using IdentityServer4.AccessTokenValidation;
 
+
 namespace Artezire
 {
     public class Startup

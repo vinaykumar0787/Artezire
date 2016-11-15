@@ -117,6 +117,23 @@
         }
       }
     },
+    "Artezire.Data.Core/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Artezire.Data.Core.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Artezire.Data.Core.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Artezire.Data.Core.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
     "Artezire.Data.Entities/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.6",
