@@ -1,0 +1,60 @@
+{
+  "version": 2,
+  "exports": {
+    "Artezire.Data.Access/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Artezire.Data.Access.dll": {}
+      },
+      "runtime": {
+        "../../../packages/EntityFramework.6.1.3-beta1/lib/net45/EntityFramework.SqlServer.dll": {},
+        "../../../packages/EntityFramework.6.1.3-beta1/lib/net45/EntityFramework.dll": {},
+        "bin/Debug/Artezire.Data.Access.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Artezire.Data.Access.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Artezire.Data.Core/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Artezire.Data.Core.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Artezire.Data.Core.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Artezire.Data.Core.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Artezire.Data.Entities/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Artezire.Data.Entities.dll": {}
+      },
+      "runtime": {
+        "../../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.SqlServer.dll": {},
+        "../../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.dll": {},
+        "bin/Debug/Artezire.Data.Entities.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Artezire.Data.Entities.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
