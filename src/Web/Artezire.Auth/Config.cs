@@ -17,7 +17,9 @@ namespace QuickstartIdentityServer
             return new List<IdentityResource>
             {
                 new IdentityResources.OpenId(),
-                new IdentityResources.Profile()
+                new IdentityResources.Profile(),
+                new IdentityResources.Email(),
+                new IdentityResource("dataeventrecordsscope",new []{ "role", "admin", "user","apis" })
             };
         }
 
@@ -74,24 +76,26 @@ namespace QuickstartIdentityServer
                     //AccessTokenLifetime = 600, // 10 minutes, default 60 minutes
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     AllowAccessTokensViaBrowser = true,
-                    RedirectUris = new List<string>
-                    {
-                        "https://localhost:3000"
+                    //RedirectUris = new List<string>
+                    //{
+                    //    "https://localhost:3000"
 
-                    },
-                    PostLogoutRedirectUris = new List<string>
-                    {
-                        "https://localhost:3000/Unauthorized"
-                    },
-                    AllowedCorsOrigins = new List<string>
-                    {
-                        "https://localhost:3000",
-                        "http://localhost:3000"
-                    },
+                    //},
+                    //PostLogoutRedirectUris = new List<string>
+                    //{
+                    //    "https://localhost:3000/Unauthorized"
+                    //},
+                    //AllowedCorsOrigins = new List<string>
+                    //{
+                    //    "https://localhost:3000",
+                    //    "http://localhost:3000"
+                    //},
                     AllowedScopes = new List<string>
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "apis",
+                        "role"
                     }
                 }
             };

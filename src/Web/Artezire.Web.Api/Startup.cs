@@ -12,6 +12,7 @@ using System.IdentityModel.Tokens.Jwt;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authorization;
+using Newtonsoft.Json.Serialization;
 
 namespace Artezire.Web.Api
 {
@@ -39,17 +40,26 @@ namespace Artezire.Web.Api
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ArtezireDbContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            
             var defaultPolicy = new AuthorizationPolicyBuilder()
                 .RequireAuthenticatedUser()
-                .RequireClaim("apis")
+                .RequireClaim("email")
                 .Build();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("apis", policyAdmin =>
+                {
+                    policyAdmin.RequireClaim("role","user");
+                });
+            });
 
             services.AddMvc(setup =>
             {
                 setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+            }).AddJsonOptions(options =>
+            {
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
 
             // Add framework services.
@@ -69,9 +79,9 @@ namespace Artezire.Web.Api
             IdentityServerAuthenticationOptions identityServerValidationOptions = new IdentityServerAuthenticationOptions
             {
                 Authority = "https://localhost:44395/",
-                AllowedScopes = new List<string> { "openid" },
+                AllowedScopes = new List<string> { "openid", "apis" },
                 ApiSecret = "apisecret",
-                //ApiName = "apis",
+                ApiName = "apis",
                 AutomaticAuthenticate = true,
                 SupportedTokens = SupportedTokens.Both,
                 // TokenRetriever = _tokenRetriever,

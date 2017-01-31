@@ -13,7 +13,7 @@ namespace Artezire.Web.Api.Controllers
     {
         // GET api/values
         [HttpGet]
-        [Authorize]
+        [Authorize("apis")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
