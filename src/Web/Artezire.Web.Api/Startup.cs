@@ -13,6 +13,7 @@ using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Newtonsoft.Json.Serialization;
+using Artezire.Data.Core;
 
 namespace Artezire.Web.Api
 {
@@ -40,27 +41,37 @@ namespace Artezire.Web.Api
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-            
-            var defaultPolicy = new AuthorizationPolicyBuilder()
-                .RequireAuthenticatedUser()
-                .RequireClaim("email")
-                .Build();
 
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("apis", policyAdmin =>
-                {
-                    policyAdmin.RequireClaim("role","user");
-                });
-            });
+            //var defaultPolicy = new AuthorizationPolicyBuilder()
+            //    .RequireAuthenticatedUser()
+            //    .RequireClaim("email")
+            //    .Build();
 
-            services.AddMvc(setup =>
-            {
-                setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
-            }).AddJsonOptions(options =>
-            {
-                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-            });
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("apis", policyAdmin =>
+            //    {
+            //        policyAdmin.RequireClaim("role","user");
+            //    });
+            //});
+
+            //services.AddMvc(setup =>
+            //{
+            //    setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+            //}).AddJsonOptions(options =>
+            //{
+            //    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            //});
+
+            //Configuration SIngleton
+            services.AddSingleton<IConfiguration>(_ => { return Configuration; });
+
+            //ConnectionString
+            services.AddScoped<ArtezireDbContext>(_ => new ArtezireDbContext(Configuration.GetConnectionString("DefaultConnection")));
+
+
+            //Dependency Injection
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);

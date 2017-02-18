@@ -21,9 +21,9 @@ namespace Artezire.Data.Access.Repository
         /// <summary>
         /// Constructor to create an instance for Db context
         /// </summary>
-        public BaseRepository()
+        public BaseRepository(ArtezireDbContext _context)
         {
-            _dbContext = new ArtezireDbContext();
+            this._dbContext = _context;
         }
 
         #endregion

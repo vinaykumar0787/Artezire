@@ -4,19 +4,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Artezire.Data.Core;
+using Microsoft.Extensions.Configuration;
 
 namespace Artezire.Web.Api.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     public class ValuesController : Controller
     {
+
+        private IProductRepository _productRepository;
+        private IConfiguration _config;
+
+        public ValuesController(IProductRepository _productRepository, IConfiguration _config)
+        {
+            this._productRepository = _productRepository;
+            this._config = _config;
+        }
+
         // GET api/values
         [HttpGet]
-        [Authorize("apis")]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var data = _productRepository.GetAllProducts();
+            return new string[] { "value1", "value2", _config.GetConnectionString("DefaultConnection") };
         }
 
         // GET api/values/5 

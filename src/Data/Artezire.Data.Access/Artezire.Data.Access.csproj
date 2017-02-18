@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContexts\ArtezireDbContext.cs" />
+    <Compile Include="DbContexts\ArtezireDbContextFactory.cs" />
     <Compile Include="DbContexts\RepositoryExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BaseRepository.cs" />

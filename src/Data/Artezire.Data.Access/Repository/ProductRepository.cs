@@ -13,6 +13,18 @@ namespace Artezire.Data.Access
     public class ProductRepository : BaseRepository<BaseEntity>, IProductRepository
     {
 
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Constructor to create an instance for Db context
+        /// </summary>
+        public ProductRepository(ArtezireDbContext _context) : base(_context)
+        {
+            
+        }
+
+        #endregion
+
         /// <summary>
         /// interface method to fetch products
         /// </summary>

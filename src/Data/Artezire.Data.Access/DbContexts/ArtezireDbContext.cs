@@ -9,7 +9,7 @@ namespace Artezire.Data.Access
         //DbSets
         public DbSet<Product> Products { get; set; }
 
-        public ArtezireDbContext() : base("DefaultConnection")
+        public ArtezireDbContext(string connString) : base(connString)
         {
 
         }
