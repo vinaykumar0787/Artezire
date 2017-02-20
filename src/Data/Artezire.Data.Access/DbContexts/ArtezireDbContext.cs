@@ -21,6 +21,7 @@ namespace Artezire.Data.Access
 
         public ArtezireDbContext(string connString) : base(connString)
         {
+            Database.SetInitializer<ArtezireDbContext>(new ArtezireDbInitializer());
 
         }
     }
