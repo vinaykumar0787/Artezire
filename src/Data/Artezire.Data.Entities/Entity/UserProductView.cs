@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Artezire.Data.Entities
 {
-    public class UserProductView
+    public class UserProductView : BaseEntity
     {
         public int UserId { get; set; }
         public int ProductId { get; set; }

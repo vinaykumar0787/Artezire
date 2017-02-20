@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Artezire.Data.Entities
 {
-    public class BlobType
+    public class BlobType : BaseEntity
     {
         public BlobTypeEnum BlobTypeCode { get; set; }
         public string BlobTypeDescription { get; set; }

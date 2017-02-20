@@ -14,6 +14,7 @@ namespace Artezire.Data.Entities
         public int ProductStatusId { get; set; }
         public int NoOfLikes { get; set; }
         public double Price { get; set; }
+        public string ProductUrl { get; set; }
 
         public ProductType ProductType { get; set; }
         public ProductStatus ProductStatus { get; set; }

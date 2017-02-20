@@ -13,14 +13,16 @@ namespace Artezire.Data.Access.DbContexts
 
         private IConfiguration _config;
 
-        public ArtezireDbContextFactory(IConfiguration _config)
+        public ArtezireDbContextFactory()
         {
-            this._config = _config;
+            
         }
+
+        
 
         public ArtezireDbContext Create()
         {
-            return new ArtezireDbContext(_config.GetConnectionString("DefaultConnection"));
+            return new ArtezireDbContext("Server = (localdb)\\mssqllocaldb; Database = ArtezireDb; Trusted_Connection = True; ");
         }
     }
 }
