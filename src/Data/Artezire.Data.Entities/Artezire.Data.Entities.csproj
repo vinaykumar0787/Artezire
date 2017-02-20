@@ -53,7 +53,7 @@
     <Compile Include="Entity\BlobType.cs" />
     <Compile Include="Entity\Gender.cs" />
     <Compile Include="Entity\Product.cs" />
-    <Compile Include="Entity\ProductBlobs.cs" />
+    <Compile Include="Entity\ProductBlob.cs" />
     <Compile Include="Entity\ProductStatus.cs" />
     <Compile Include="Entity\ProductType.cs" />
     <Compile Include="Entity\User.cs" />
