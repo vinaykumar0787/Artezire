@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Artezire.Data.Entities
 {
-    public class ProductBlobs
+    public class ProductBlob
     {
         public int ProductId { get; set; }
         public string BlobKey { get; set; }
