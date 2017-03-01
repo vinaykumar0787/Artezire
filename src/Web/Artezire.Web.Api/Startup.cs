@@ -42,26 +42,26 @@ namespace Artezire.Web.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //var defaultPolicy = new AuthorizationPolicyBuilder()
-            //    .RequireAuthenticatedUser()
-            //    .RequireClaim("email")
-            //    .Build();
+            var defaultPolicy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .RequireClaim("email")
+                .Build();
 
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("apis", policyAdmin =>
-            //    {
-            //        policyAdmin.RequireClaim("role","user");
-            //    });
-            //});
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("apis", policyAdmin =>
+                {
+                    policyAdmin.RequireClaim("role", "user");
+                });
+            });
 
-            //services.AddMvc(setup =>
-            //{
-            //    setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
-            //}).AddJsonOptions(options =>
-            //{
-            //    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-            //});
+            services.AddMvc(setup =>
+            {
+                setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+            }).AddJsonOptions(options =>
+            {
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
 
             //Configuration SIngleton
             services.AddSingleton<IConfiguration>(_ => { return Configuration; });
@@ -76,7 +76,14 @@ namespace Artezire.Web.Api
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddCors();
+            //services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader());
+            });
             services.AddMvc();
         }
 
@@ -106,6 +113,7 @@ namespace Artezire.Web.Api
 
             app.UseApplicationInsightsExceptionTelemetry();
 
+            app.UseCors("AllowSpecificOrigin");
             app.UseMvc();
         }
     }

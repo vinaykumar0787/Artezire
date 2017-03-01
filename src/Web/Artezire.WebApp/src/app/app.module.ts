@@ -12,6 +12,7 @@ import { AuthorizedComponent} from './authorized/authorized.component';
 
 import {Configuration} from './app.constants';
 import { SecurityService} from './services/security.service';
+import { ProductService} from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SecurityService} from './services/security.service';
   ],
   providers: [
     SecurityService, 
+    ProductService,
     Configuration,
     appRoutingProviders
     ],

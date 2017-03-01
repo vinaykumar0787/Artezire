@@ -1,1 +1,11 @@
 ﻿<div>You are logged in now.</div>
+
+<div>
+    <input type="button" (click)="GetProducts()" value="Call Products Api" />
+</div>
+
+
+    Products List present: 
+    <li *ngFor="let product of products">
+        {{ product }}
+      </li>

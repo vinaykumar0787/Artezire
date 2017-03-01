@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Artezire.Data.Core;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Cors;
 
 namespace Artezire.Web.Api.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowSpecificOrigin")]
     public class ValuesController : Controller
     {
 
@@ -24,6 +26,7 @@ namespace Artezire.Web.Api.Controllers
 
         // GET api/values
         [HttpGet]
+        [Authorize]
         public IEnumerable<string> Get()
         {
             var data = _productRepository.GetAllProducts();
