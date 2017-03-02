@@ -240,7 +240,10 @@ namespace Artezire.Auth.Controllers
 
             await _persistedGrantService.RemoveAllGrantsAsync(subjectId, "angular2client");
 
-            return View("LoggedOut", vm);
+            //COde change for Artezire - copied form post as we don;t want a consent screen
+            return Redirect(vm.PostLogoutRedirectUri);
+
+            //return View("LoggedOut", vm);
         }
 
         //
