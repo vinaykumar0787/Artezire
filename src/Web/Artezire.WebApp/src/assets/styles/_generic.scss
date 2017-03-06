@@ -1,0 +1,62 @@
+/* ground zero styles, low specificity, resets
+
+example
+------------------
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*{
+  margin: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  padding-right: $spacing-unit;
+}
+
+label {
+  display:block;
+}
+
+legend{
+  margin-bottom: 0;
+  border:none;
+}
+
+.row{
+  display: block;
+}
+
+.text-white {
+  color: $white-color;
+}
+
+.text-grey {
+  color: $grey-text;
+}
+
+.text-black {
+  color: $black-color;
+}
+
+.text-blue {
+  color: $secondary-dark-blue;
+}
+
+.text-no-wrap {
+  white-space: nowrap;
+}
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+

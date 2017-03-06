@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/_settings.scss';
+@import 'assets/styles/_tools.scss';
+@import 'assets/styles/_generic.scss';
+@import 'assets/styles/_base.scss';
+@import 'assets/styles/_objects.scss';
+@import 'assets/styles/_theme.scss';
+
+  body {
+    background-color: #fff;
+  }

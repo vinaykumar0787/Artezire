@@ -1,1 +1,78 @@
-﻿<div>Welcome - This is home page and you are logged in as : </div>
+﻿<section class="product-form-section product-form-section--image">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="job-form-box">
+              <h2 class="heading">Find an <span class="accent">Art</span> you <span class="accent">dezire</span>.</h2>
+              <form id="product-main-form" method="get" action="#" class="product-main-form">
+                <div class="controls">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="form-group">
+                        <label for="profession">Art</label>
+                        <input type="text" id="productType" name="productType" placeholder="Art you are looking for" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="Any particular location?" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="submit" name="submit" class="btn btn-primary product-main-form__button"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--Featured Products-->
+    <section style="background: #fafafa;">
+      <div class="container">
+        <h3 class="heading">Featured Products</h3>
+        <div class="row featured same-height-row">
+          <div class="col-md-4">
+            <div class="box-image-text bg-visible same-height" style="height: 445px;"> 
+              <div class="top"><a href="detail.html">
+                  <div class="image"><img src="assets/images/Art1.jpg" alt="" class="img-responsive featured_artimage"></div>
+                  </a></div>
+              <div class="content">
+                <h5><a href="detail.html">Hanna Monatana</a></h5>
+                <p class="featured__details">  <i class="fa fa-map-marker job__location"></i>San Francisco<span class="label featured__label label-success">In Stock</span></p>
+                <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box-image-text bg-visible same-height" style="height: 445px;"> 
+              <div class="top"><a href="detail.html">
+                  <div class="image"><img src="assets/images/Art2.jpg" alt="" class="img-responsive featured_artimage"></div>
+                  </a></div>
+              <div class="content">
+                <h5><a href="detail.html">Charlies Angeles</a></h5>
+                <p class="featured__details">  <i class="fa fa-map-marker job__location"></i>Palo Alto<span class="label featured__label label-success">In Stock</span></p>
+                <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box-image-text bg-visible same-height" style="height: 445px;"> 
+              <div class="top"><a href="detail.html">
+                  <div class="image"><img src="img/featured3.jpg" alt="" class="img-responsive featured_artimage"></div>
+                  </a></div>
+              <div class="content">
+                <h5><a href="detail.html">Justin Beiber</a></h5>
+                <p class="featured__details">  <i class="fa fa-map-marker job__location"></i>San Francisco<span class="label featured__label label-default">Open for Bid</span></p>
+                <p>Fifth abundantly made Give sixth hath. Cattle creature i be dont them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center margin-top"><a href="" [routerLink]="['./products']" class="btn btn-ghost">See more Products</a></div>
+      </div>
+    </section>

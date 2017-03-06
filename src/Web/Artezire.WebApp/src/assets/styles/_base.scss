@@ -1,0 +1,256 @@
+// /* Unclassed HTML elements
+// H1-H6, basic links, lists, etc.
+// example
+// */
+
+// html, body {
+//   height: $fullWidth;
+// }
+
+// body {
+//   background-color: $white-color;
+//   margin: 0;
+//   font-family: "Avenir LT W04_65 Medium1475536";
+// }
+// .full-H-W{
+//   width: $fullWidth;
+//   height: $fullWidth;
+//   position: relative;
+// }
+// .mdp-header{
+//   position: fixed;
+//   left: 0px;
+//   top: 0px;
+//   z-index: 3;
+// }
+// .main-nav{
+//   position: fixed;
+//   left: 0px;
+//   top: 78px;
+//   z-index: 2;
+//   width: 100%;
+// }
+
+// .content-layout{
+//   position: fixed;
+//   left: 0;
+//   top: 160px;
+//   bottom: 0;
+//   padding: 0;
+//   overflow: auto;
+//   & mdp-processing{
+//     position: relative;
+//     float: left;
+//     @include fullscreen;
+//     & mdp-processing-navbar,
+//     & mdp-manual-process, 
+//     & mdp-auto-process{
+//       position: absolute;
+//       width: auto;
+//       left:26px;
+//       right: 26px;
+//     }
+//     & mdp-processing-navbar{
+//       top: 0;
+//     }
+//     & mdp-manual-process, 
+//     & mdp-auto-process{
+//       top: 65px;
+//       bottom: 0;
+//       overflow: auto;
+//       & .mdp-grid{
+//         position: relative;
+//         float: left;
+//         @include fullscreen;
+//         & .btn-group{
+//           padding: 6px 0;
+//           width: 100%;
+//         }
+//         & .gridouter{
+//           position: absolute;
+//           left: 0;
+//           top: 41px;
+//           width: 100%;
+//           bottom: 0;
+//           right: 0;
+//           overflow: auto;
+//           & .gridInner{
+//             position: relative;
+//             float: left;
+//             @include fullscreen;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// header {
+//   position: relative;
+//   padding: $spacing-unit;
+//   height: 6 * $spacing-unit;
+//   @include white_bg;  
+//   background-color: $white-color;
+//   & .logo {
+//     @include logo_size;
+//     background-image: url('assets/images/artezire_logo.png');
+//     background-repeat: no-repeat;
+//     background-position-y: center;
+//   }
+  
+//   .navbar-nav {
+//     & a{
+//         font-size: 16px;
+//         font-family: 'Avenir LT W04_45 Book1475512';
+//         text-transform: none;
+//         text-decoration: none;
+//         color:$grey-title-text;
+//         cursor: pointer;
+//         &:hover,
+//         &:focus{
+//           color: #0064b5;
+//           background-color: #ffffff;
+//           text-decoration: none;
+//         }
+//       }
+//     & .ui-menuitem-text{
+//       font-size: 14px;
+//       font-family: "Avenir LT W04_65 Medium1475536";
+//     }
+//     &.navbar-right{
+//       margin-top:15px;
+//       margin-right: 0px;
+//     }
+//     & .ui-menu{
+//       &.ui-shadow{
+//         background-color: transparent;
+//         border-color:transparent;
+//             -webkit-box-shadow: none;
+//         -moz-box-shadow: none;
+//         box-shadow:none; 
+//       }
+//       & .ui-menu-list{
+//         background-color: #fff;
+//         border:1px solid #ccc;
+//         padding-top: 3px;
+//         padding-bottom: 3px;
+//         margin-top: 10px;
+//         & .ui-widget-header {
+//           &:first-child{
+//               display: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .fa-user{
+//     font-size: 19.5px;
+//     line-height: 1;
+//     vertical-align: bottom;
+//   }
+// }
+
+
+
+
+// /**** Page Navigation Styling ****/
+// .page-nav{
+//   position: relative;
+//   background-color: $grey-main;
+//   padding-left: 7px;
+//   padding-right: 15px;
+//   margin-top: 30px;
+//   &:before,
+//   &:after{
+//     content: '';
+//     position: absolute;
+//     left:0px;
+//   }
+//   &:before{ 
+//     width:100%;
+//     top:-30px;
+//     height: 1px;
+//     background-color: $grey-main;    
+//   }
+//   &:after{    
+//     width: 7px;
+//     height: 100%;
+//     top: 0px;
+//     background-color:$secondary-blue;
+//   }
+//   & .navbar-nav {
+//     & li{
+//       & a{
+//         color:#000;
+//         text-transform: uppercase;
+//         min-width: 212px;
+//         min-height: 52px;
+//         font-size: 14px;
+//         padding-left: 19px;
+//         padding-right: 19px;
+//         font-family: "Avenir LT W04_65 Medium1475536";
+//         &:hover,
+//         &:focus{
+//           color: $primary-blue;
+//          background-color: $grey-main;
+//         }
+//       }
+//       &.active{
+//         & a{
+//           color: $white-color;
+//           background-color: $primary-blue;
+//           cursor: default;
+//           &:hover,
+//           &:focus{
+//             color: $white-color;
+//             background-color: $primary-blue;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+// /***** Content Tab style *****/
+// .nav-tabs{
+//     padding-top: 10px;
+//     padding-bottom: 5px;
+//     min-height: 65px;
+//       & li{
+//         margin-right: 13px;
+//         font-size: 14px;
+//         font-weight: 500;
+//         font-family: "Avenir LT W04_65 Medium1475536";
+//         & a{
+//           padding-left: 0;
+//           padding-right: 0;
+//           padding-bottom: 5px;
+//           color: $processing-title-text;
+//           border:0px;
+//           border-bottom:2px solid $white-color;
+//           &:hover,
+//           &:focus{
+//             border-color: $white-color;
+//             color: $primary-blue;
+//             background-color: $white-color;
+//           }
+//         }
+//         &.active{
+//           & a{
+//               color: $primary-blue;
+//               background-color: $white-color;
+//               border:0px;
+//               border-bottom:2px solid $primary-blue;
+//               &:hover,
+//               &:focus{
+//                 border:0px;
+//                 border-bottom:2px solid $primary-blue;
+//                 color: $primary-blue;
+//                 background-color: $white-color;
+//               }
+//            }
+//         }
+//       }
+//   }
+

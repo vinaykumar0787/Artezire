@@ -1,0 +1,69 @@
+/* high level defined settings to add as variables in other style sheets
+glabally available settings, config switches, brand colors,*/
+
+
+/* Theme Color */
+
+
+/* primary colors */
+$primary-blue: #0064b5;
+$primary-grey: #56565a;
+
+/* secondary colors */
+$secondary-blue: #00aeef;
+$secondary-green: #1aae4b;
+$secondary-red: #d2232a;
+$secondary-accent-orange: #dc5727;
+$secondary-action-orange: #ff9400;
+$secondary-yellow: #fec500;
+$secondary-light-grey: #b2b2b2;
+$secondary-grey: #898b8e;
+$secondary-dark-blue: #02294e;
+
+/* colors */
+$white-color: #fff;
+$black-color: #000;
+$grey-app-background: #F2F2F2;
+$grey-main: #d9d9d9;
+$grey-title-text: #555;
+$grey-text: #B3B3B3;
+
+/* Font */
+$font-stack: Avenir LT W04_65 Medium1475536, sans-serif;
+
+/* Units */
+$spacing-unit: 13px;
+$width-units: 96;
+
+/* Base Units*/
+$h4-baseline:6px;
+$h4-start:3px;
+$error-padding:12px;
+$footer-height: 4 * $spacing-unit;
+$small-baseline-top:12px;
+$small-sm-baseline:6px;
+$main-image:-20px;
+$picholder-xs-height:525px;
+$dropdown-arrow-top: -30px;
+$dropdown-margin-left: -28px;
+$dropdown-padding-left: 100%;
+$nav-caret-margin: 7px;
+$nav-caret-border: 4px;
+$nav-font-size: 14px;
+$nav-icon-margin: 3px;
+$nav-icon-container-size: 20px;
+$nav-home-margin-top: 68px;
+$nav-home-margin-bottom: 42px;
+
+
+/*screen breaks*/
+/*@screen-md-min: 992px;*/
+$screen-md-min: 992px;
+
+/*processing screen*/
+$processing-title-text: #565656;
+
+
+/* Layout scaling */
+
+$fullWidth: 100%;

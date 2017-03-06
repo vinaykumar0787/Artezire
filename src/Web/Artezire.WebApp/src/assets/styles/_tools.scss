@@ -1,0 +1,69 @@
+/* building of larger reused classes and rules, globally available tools, public mixins
+helper functions
+
+example
+------------------
+
+@mixin font-brand() {
+  font-family: "UI Font", sans-serif;
+  font-weight: 400;
+}
+*/
+@mixin h2_mix() {
+  margin: 0;
+  font: 21pt $font-stack;
+  font-weight: 800;
+  &.page-title {
+    padding-top: 3 * $spacing-unit;
+  }
+}
+@mixin fullscreen(){
+  width: $fullWidth;
+  height: $fullWidth;
+}
+
+@mixin h4_mix() {
+  color: $grey-title-text;
+  margin: 0;
+  font: 16pt $font-stack;
+  &.title {
+    margin: 2 * $spacing-unit 0 $h4-baseline 0;
+    &-start {
+      margin: $h4-start 0 $h4-baseline 0;
+    }
+  }
+}
+
+@mixin max-width($space) {
+  max-width: $width-units * $space;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin logo_size {
+  width: 33 * $spacing-unit;
+  height: 4 * $spacing-unit;
+}
+
+@mixin white_bg {
+  background-color: $white-color;
+}
+/* Medium devices (desktops, 992px and up) */
+/* @media (min-width: @screen-md-min) {*/
+@media (min-width: $screen-md-min) {
+  .sm-error {
+    display: none;
+  }
+  .app-right-col-picholder {
+    min-height: $picholder-xs-height;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .error {
+    display: none;
+  }
+  .sm-error {
+    display: block;
+  }
+}
