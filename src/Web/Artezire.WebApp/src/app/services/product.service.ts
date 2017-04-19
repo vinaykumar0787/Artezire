@@ -20,7 +20,7 @@ export class ProductService {
         let headers = new Headers({ 'Authorization': 'Bearer ' + this._securityService.GetToken() });
         let options = new RequestOptions({ headers: headers });
 
-        let url = 'http://localhost:65180/api/values';
+        let url = 'http://localhost:65180/api/product';
         return this._http.get(url, options)
                 .map((response: Response) => response.json());
     }

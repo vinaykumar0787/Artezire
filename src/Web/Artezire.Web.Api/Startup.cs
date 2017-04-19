@@ -55,13 +55,13 @@ namespace Artezire.Web.Api
                 });
             });
 
-            services.AddMvc(setup =>
-            {
-                setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
-            }).AddJsonOptions(options =>
-            {
-                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-            });
+            //services.AddMvc(setup =>
+            //{
+            //    setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+            //}).AddJsonOptions(options =>
+            //{
+            //    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            //});
 
             //Configuration SIngleton
             services.AddSingleton<IConfiguration>(_ => { return Configuration; });
@@ -107,7 +107,7 @@ namespace Artezire.Web.Api
                 AutomaticChallenge = true
             };
 
-            app.UseIdentityServerAuthentication(identityServerValidationOptions);
+            //app.UseIdentityServerAuthentication(identityServerValidationOptions);
 
             app.UseApplicationInsightsRequestTelemetry();
 

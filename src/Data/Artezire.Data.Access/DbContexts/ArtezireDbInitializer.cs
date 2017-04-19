@@ -1,9 +1,12 @@
 ﻿using Artezire.Data.Entities;
 using Artezire.Data.Entities.Enums;
+using CsvHelper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -70,6 +73,9 @@ namespace Artezire.Data.Access
             {
                 context.ProductStatuses.Add(pds);
             }
+
+           
+
         }
     }
 }

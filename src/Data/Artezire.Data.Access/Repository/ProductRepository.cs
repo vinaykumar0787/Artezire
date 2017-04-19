@@ -45,5 +45,20 @@ namespace Artezire.Data.Access
             }
             return null;
         }
+
+        public async void AddProducts(List<Product> products)
+        {
+            try
+            {
+                _dbContext.Products.AddRange(products);
+                await _dbContext.SaveChangesAsync();
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

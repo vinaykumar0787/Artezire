@@ -21,15 +21,4 @@ export class AppComponent implements OnInit {
             this.securityService.AuthorizedCallback();
         }
     }
-
-    public Login() {
-        debugger;
-        console.log("Do login logic");
-        this.securityService.Authorize();
-    }
-
-    public Logout() {debugger;
-        console.log("Do logout logic");
-        this.securityService.Logoff();
-    }
 }

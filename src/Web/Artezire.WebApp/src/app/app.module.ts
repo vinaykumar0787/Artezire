@@ -5,7 +5,10 @@ import { HttpModule } from '@angular/http';
 import {routing, appRoutingProviders} from './app.routes';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent} from './shared/header/header.component';
+import { NavbarComponent} from './shared/navbar/navbar.component';
 import { HomeComponent} from './home/home.component';
+import { ProductComponent} from './products/products.component';
 import { ForbiddenComponent} from './forbidden/forbidden.component';
 import { UnauthorizedComponent} from './unauthorized/unauthorized.component';
 import { AuthorizedComponent} from './authorized/authorized.component';
@@ -20,7 +23,10 @@ import { ProductService} from './services/product.service';
     HomeComponent,
     ForbiddenComponent,
     UnauthorizedComponent,
-    AuthorizedComponent
+    AuthorizedComponent,
+    HeaderComponent,
+    NavbarComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
