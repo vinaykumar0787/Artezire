@@ -12,6 +12,7 @@ import { ProductComponent} from './products/products.component';
 import { ForbiddenComponent} from './forbidden/forbidden.component';
 import { UnauthorizedComponent} from './unauthorized/unauthorized.component';
 import { AuthorizedComponent} from './authorized/authorized.component';
+import {CatalogResultListComponent} from './shared/catalog/catalog-result-list.component';
 
 import {Configuration} from './app.constants';
 import { SecurityService} from './services/security.service';
@@ -26,7 +27,8 @@ import { ProductService} from './services/product.service';
     AuthorizedComponent,
     HeaderComponent,
     NavbarComponent,
-    ProductComponent
+    ProductComponent,
+    CatalogResultListComponent
   ],
   imports: [
     BrowserModule,

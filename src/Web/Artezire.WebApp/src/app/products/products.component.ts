@@ -1,19 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {CatalogResultListComponent} from '../shared/catalog/catalog-result-list.component';
+import {ProductService} from '../services/product.service';
 
 @Component({
-    selector: 'art-product',
-    templateUrl: 'products.component.html'
+    templateUrl: 'products.component.html',
+    providers: [ProductService]
 })
 
-export class ProductComponent implements OnInit {
-
-    public message: string;
-    public values: any[];
-
-    constructor() {
-        this.message = 'ProductComponent constructor';
-    }
-
-    ngOnInit() {
-    }
+export class ProductComponent {
 }
